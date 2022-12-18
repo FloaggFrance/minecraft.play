@@ -1,11 +1,7 @@
 <?php
-// header("Content-type: text/plain");
+$ipServ = "";
 //Get the status and decode the JSON
-$status = json_decode(file_get_contents('https://api.mcsrvstat.us/2/funcraft.fr'));
-
-//Show the version
-// var_dump($status);
-// die();
+$status = json_decode(file_get_contents('https://api.mcsrvstat.us/2/'.$ipServ));
 
 $gamePlayers = $status->players;
 ?>
@@ -62,7 +58,7 @@ $gamePlayers = $status->players;
 
 				<div class="element">
 					<div class="content">
-						<span class="number">minecraft.play</span>
+						<span class="number"><?= $ipServ ?></span>
 					</div>
 					<div class="desc">
 						<span class="text">I.P</span>
